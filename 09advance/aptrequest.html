@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121" >
+
+    <button id="button">
+        clikc here
+    </button>
+
+    <div class ="box " >
+        
+      </div>
+      
+</body>
+<script>
+    const requesturl = 'https://api.github.com/users/hiteshchoudhary'
+    const Xhr= new XMLHttpRequest()
+
+    document.querySelector('#button').addEventListener('click',function(){
+        Xhr.open('GET',requesturl)
+
+Xhr.onreadystatechange = function (){
+   console.log(Xhr.readyState);
+   if(Xhr.readyState==4){
+       const data = JSON.parse(this.responseText)
+       console.log(data)
+       console.log(data.followers);
+       console.log(data.avatar_url)
+       document.querySelector(".box").innerHTML =data.followers
+       document.querySelector(".box").innerHTML =data.avatar_url
+   }            
+}
+
+
+
+
+
+
+   
+   Xhr.send() 
+    })
+ 
+
+</script>
+</html>

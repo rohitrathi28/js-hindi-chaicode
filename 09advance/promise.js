@@ -116,3 +116,5 @@ fetch('https://jsonplaceholder.typicode.com/users').then((response)=>{
 console.log (DAta)
 })
 .catch((error)=>console.log(error))
+
+
